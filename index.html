@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semillero de Investigación | Agrobiosphere — IoT & Micología</title>
+  <meta name="description" content="Semillero de investigación enfocado en agricultura de precisión, IoT y cultivo inteligente de Pleurotus ostreatus con el paquete tecnológico Agrobiosphere.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Sora:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Mycelium Canvas Background -->
+  <canvas id="myceliumCanvas"></canvas>
+
+  <!-- Scan Line Overlay -->
+  <div class="scan-overlay"></div>
+
+  <!-- Navigation -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="logo_vectorizado.svg" alt="Logo Semillero" class="nav-logo-img">
+        <span class="nav-logo-text">SEMILLERO<span class="accent-dot">_</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link" data-label="01">Nosotros</a>
+        <a href="#project" class="nav-link" data-label="02">Proyecto</a>
+        <a href="#methodology" class="nav-link" data-label="03">Metodología</a>
+        <a href="#tech" class="nav-link" data-label="04">Tecnología</a>
+      </div>
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">01 — Nosotros</a>
+    <a href="#project" class="mobile-link">02 — Proyecto</a>
+    <a href="#methodology" class="mobile-link">03 — Metodología</a>
+    <a href="#tech" class="mobile-link">04 — Tecnología</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        <span>INVESTIGACIÓN ACTIVA</span>
+      </div>
+      <div class="hero-logo-container">
+        <img src="logo_vectorizado.svg" alt="Logo Semillero de Investigación" class="hero-logo">
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line" data-delay="0">Donde la</span>
+        <span class="title-line title-highlight" data-delay="1">biología</span>
+        <span class="title-line" data-delay="2">se encuentra con la</span>
+        <span class="title-line title-highlight alt" data-delay="3">tecnología</span>
+      </h1>
+      <p class="hero-sub">Semillero de investigación en agricultura de precisión, IoT y cultivo inteligente de hongos comestibles.</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="4">0</span>
+          <span class="stat-label">Variables<br>monitoreadas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span>
+          <span class="stat-label">Fases de<br>investigación</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="24">0</span>
+          <span class="stat-label">Monitoreo<br>hrs/día</span>
+        </div>
+      </div>
+      <a href="#project" class="hero-cta">
+        <span>Explorar proyecto</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">01 / SOBRE NOSOTROS</span>
+        <h2 class="section-title">Cultivando el <span class="text-glow">futuro</span> desde la raíz</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">Somos un semillero de investigación enfocado en cerrar la brecha entre la producción agrícola tradicional y la tecnología de vanguardia.</p>
+          <p>Nuestro enfoque combina <strong>Internet de las Cosas (IoT)</strong>, <strong>machine learning</strong> y <strong>micología aplicada</strong> para desarrollar sistemas de cultivo inteligentes que maximicen la productividad mientras minimizan el impacto ambiental.</p>
+          <p>Trabajamos con <em>Pleurotus ostreatus</em> (orellanas) dentro del paquete tecnológico <strong>Agrobiosphere</strong>, un sistema de producción en ambientes controlados donde cada variable cuenta.</p>
+        </div>
+        <div class="about-visual">
+          <div class="data-stream">
+            <div class="stream-item" data-type="temp">
+              <span class="stream-icon">🌡️</span>
+              <span class="stream-label">Temperatura</span>
+              <span class="stream-value">20-30°C</span>
+              <div class="stream-bar"><div class="stream-fill" style="--fill: 72%"></div></div>
+            </div>
+            <div class="stream-item" data-type="humidity">
+              <span class="stream-icon">💧</span>
+              <span class="stream-label">Humedad Relativa</span>
+              <span class="stream-value">>85%</span>
+              <div class="stream-bar"><div class="stream-fill" style="--fill: 88%"></div></div>
+            </div>
+            <div class="stream-item" data-type="ph">
+              <span class="stream-icon">⚗️</span>
+              <span class="stream-label">pH del Sustrato</span>
+              <span class="stream-value">5.5 – 6.5</span>
+              <div class="stream-bar"><div class="stream-fill" style="--fill: 60%"></div></div>
+            </div>
+            <div class="stream-item" data-type="ce">
+              <span class="stream-icon">⚡</span>
+              <span class="stream-label">Conductividad Eléctrica</span>
+              <span class="stream-value">Óptima</span>
+              <div class="stream-bar"><div class="stream-fill" style="--fill: 55%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Section -->
+  <section id="project" class="section project-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">02 / PRODUCTO EN DESARROLLO</span>
+        <h2 class="section-title">Monitoreo IoT de <span class="text-glow"><em>P. ostreatus</em></span></h2>
+      </div>
+
+      <div class="project-hero-card">
+        <div class="project-status">
+          <span class="status-badge in-dev">
+            <span class="status-pulse"></span>
+            EN DESARROLLO
+          </span>
+          <span class="project-id"># AGBIO-001</span>
+        </div>
+        <h3 class="project-card-title">Relación entre variables ambientales y productividad del cultivo de orellanas en Agrobiosphere</h3>
+        <p class="project-card-desc">Implementación de una red IoT para monitorear en tiempo real temperatura, humedad relativa, pH y conductividad eléctrica a nivel del tubular, correlacionando estos datos con la productividad mediante algoritmos de machine learning.</p>
+
+        <!-- Researcher Profile -->
+        <div class="researcher-card">
+          <div class="researcher-avatar">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="researcher-info">
+            <span class="researcher-role">Investigador / Desarrollador</span>
+            <h4 class="researcher-name">Yeison Jair Gaitán Orrego</h4>
+            <p class="researcher-detail">Estudiante de Ingeniería de Sistemas — UNAD<br><span class="researcher-highlight">Estudiante en Proyección · Semillero de Investigación</span></p>
+          </div>
+        </div>
+        
+        <div class="project-objectives">
+          <h4 class="obj-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            Objetivos Específicos
+          </h4>
+          <div class="obj-grid">
+            <div class="obj-item">
+              <span class="obj-num">01</span>
+              <p>Cuantificar la productividad evaluando el desarrollo del micelio en los tubulares y la biomasa final en la cosecha.</p>
+            </div>
+            <div class="obj-item">
+              <span class="obj-num">02</span>
+              <p>Construir un modelo de análisis que identifique rangos óptimos de T°, humedad, pH y CE para maximizar rendimiento.</p>
+            </div>
+            <div class="obj-item">
+              <span class="obj-num">03</span>
+              <p>Determinar la distribución espacial más eficiente de tubulares mediante mapeo de variabilidad microclimática.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hypothesis -->
+      <div class="hypothesis-block">
+        <div class="hyp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.674M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h4>Hipótesis</h4>
+        <p>El monitoreo continuo de las variables internas del tubular permitirá identificar los rangos óptimos requeridos en cada fase del cultivo. Al establecer la relación entre la configuración macro de Agrobiosphere y la respuesta interna de los tubulares, será posible ajustar los parámetros de manejo para <strong>maximizar la productividad y biomasa final</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section id="methodology" class="section methodology-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">03 / METODOLOGÍA</span>
+        <h2 class="section-title">Tres fases, un <span class="text-glow">sistema</span></h2>
+      </div>
+
+      <div class="phases-timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="phase-card" data-phase="1">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+          </div>
+          <div class="phase-content">
+            <span class="phase-tag">FASE 01</span>
+            <h3>Implementación de la Red IoT</h3>
+            <p>Diseño e instalación de nodos de monitoreo con microcontroladores <strong>ESP32</strong>, sensores de temperatura, humedad relativa, y sondas de pH y conductividad eléctrica. Transmisión continua via protocolo <strong>MQTT</strong> a base de datos en la nube.</p>
+            <div class="phase-tasks">
+              <span class="task-chip">ESP32</span>
+              <span class="task-chip">Sensores T°/HR</span>
+              <span class="task-chip">Sondas pH/CE</span>
+              <span class="task-chip">MQTT</span>
+              <span class="task-chip">Cloud DB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-card" data-phase="2">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+          </div>
+          <div class="phase-content">
+            <span class="phase-tag">FASE 02</span>
+            <h3>Levantamiento de Datos Operativos</h3>
+            <p>Monitoreo continuo de al menos un ciclo completo de producción. Registro automatizado de variables ambientales combinado con registros manuales de productividad: <strong>peso de cosecha</strong>, tiempo de aparición de primordios y número de cuerpos fructíferos por tubular.</p>
+            <div class="phase-tasks">
+              <span class="task-chip">Ciclo completo</span>
+              <span class="task-chip">Datos en tiempo real</span>
+              <span class="task-chip">Geolocalización tubular</span>
+              <span class="task-chip">Registro biomasa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-card" data-phase="3">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+          </div>
+          <div class="phase-content">
+            <span class="phase-tag">FASE 03</span>
+            <h3>Correlación y Modelado</h3>
+            <p>Análisis estadístico descriptivo, correlación de variables y aplicación de algoritmos de <strong>machine learning</strong> para construir un modelo predictivo de rendimiento. Mapeo de variabilidad espacial para optimizar distribución de tubulares.</p>
+            <div class="phase-tasks">
+              <span class="task-chip">Machine Learning</span>
+              <span class="task-chip">Modelo predictivo</span>
+              <span class="task-chip">Análisis espacial</span>
+              <span class="task-chip">Optimización</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tech" class="section tech-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">04 / STACK TECNOLÓGICO</span>
+        <h2 class="section-title">La red detrás del <span class="text-glow">cultivo</span></h2>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card" data-tech="hardware">
+          <div class="tech-card-glow"></div>
+          <div class="tech-icon-wrap">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+          </div>
+          <h3>Hardware IoT</h3>
+          <p>Microcontroladores ESP32 con sensores de alta precisión para temperatura, humedad, pH y conductividad eléctrica integrados en cada nodo.</p>
+          <div class="tech-specs">
+            <span>ESP32</span>
+            <span>DHT22</span>
+            <span>pH Meter</span>
+            <span>TDS/CE</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-tech="comm">
+          <div class="tech-card-glow"></div>
+          <div class="tech-icon-wrap">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12 20h.01"/></svg>
+          </div>
+          <h3>Comunicación</h3>
+          <p>Protocolo MQTT para transmisión de datos en tiempo real desde los nodos hacia la infraestructura cloud con baja latencia.</p>
+          <div class="tech-specs">
+            <span>MQTT</span>
+            <span>WiFi</span>
+            <span>JSON</span>
+            <span>Real-time</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-tech="cloud">
+          <div class="tech-card-glow"></div>
+          <div class="tech-icon-wrap">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M5 20V8.5a2 2 0 012-2h10a2 2 0 012 2V20M9 20v-4h6v4"/><path d="M3 20l9-14 9 14"/></svg>
+          </div>
+          <h3>Cloud & Datos</h3>
+          <p>Base de datos centralizada en la nube para almacenamiento persistente, visualización de dashboards y análisis histórico continuo.</p>
+          <div class="tech-specs">
+            <span>Cloud DB</span>
+            <span>Dashboards</span>
+            <span>API REST</span>
+            <span>Storage</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-tech="ml">
+          <div class="tech-card-glow"></div>
+          <div class="tech-icon-wrap">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Machine Learning</h3>
+          <p>Algoritmos de aprendizaje automático para identificar patrones no lineales y construir modelos predictivos de rendimiento del cultivo.</p>
+          <div class="tech-specs">
+            <span>Python</span>
+            <span>Predictivo</span>
+            <span>Correlación</span>
+            <span>Optimización</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture Diagram -->
+      <div class="architecture-block">
+        <h3 class="arch-title">Arquitectura del Sistema</h3>
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-icon">🍄</div>
+            <span>Tubulares<br><small>P. ostreatus</small></span>
+          </div>
+          <div class="arch-arrow">
+            <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 H30 M25 5 L32 10 L25 15" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="arch-node">
+            <div class="arch-icon">📡</div>
+            <span>Sensores<br><small>ESP32 + Sondas</small></span>
+          </div>
+          <div class="arch-arrow">
+            <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 H30 M25 5 L32 10 L25 15" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="arch-node">
+            <div class="arch-icon">📶</div>
+            <span>MQTT<br><small>Broker</small></span>
+          </div>
+          <div class="arch-arrow">
+            <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 H30 M25 5 L32 10 L25 15" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="arch-node">
+            <div class="arch-icon">☁️</div>
+            <span>Cloud DB<br><small>Dashboard</small></span>
+          </div>
+          <div class="arch-arrow">
+            <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 H30 M25 5 L32 10 L25 15" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="arch-node highlight">
+            <div class="arch-icon">🧠</div>
+            <span>ML Model<br><small>Predicción</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo_vectorizado.svg" alt="Logo Semillero" class="footer-logo">
+          <p>Semillero de Investigación<br>Agricultura de Precisión & IoT</p>
+        </div>
+        <div class="footer-info">
+          <p class="footer-quote">"Pasar de una operación basada en la experiencia acumulada a una operación basada en datos."</p>
+        </div>
+      </div>
+      <div class="footer-dev">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <span>Desarrollado por <strong>Yeison Jair Gaitán Orrego</strong> · Ing. de Sistemas — UNAD</span>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Semillero de Investigación — UNAD</span>
+        <span class="footer-built">Construido con 🍄 y código</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
